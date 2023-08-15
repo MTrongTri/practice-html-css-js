@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, red, blue);
+    display: flex;
+}
+
+.search-box {
+    margin: auto;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    border-radius: 6px;
+    background: black;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.search-box__input {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background-color: black;
+    cursor: pointer;
+    color: white;
+    padding: 8px;
+    transition: 0.5s;
+}
+
+.search-box__button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    position: absolute;
+    right: 0;
+}
+
+.search-box__button i {
+    font-size: 20px;
+}
+
+.search-box.open {
+    width: 250px;
+}

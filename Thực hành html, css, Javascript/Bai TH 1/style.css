@@ -1,0 +1,129 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(90deg, #33CC66, #009966) ;
+}
+
+.card {
+    position: relative;
+    margin: 120px auto;
+    width: 250px;
+    height: 460px;
+    background-color: #000022;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.5s;
+}
+
+.card:hover {
+    height: 520px;
+}
+
+.card:hover .card__action {
+    display: flex;
+}
+
+.card__icon {
+    font-size: 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.card__icon--cart, .card__icon--heart {
+    cursor: pointer;
+}
+
+.card__img {
+    text-align: center;
+}
+
+.card__img img {
+    width: calc(100% - 38px);
+    height: calc(100% - 50px);
+    object-fit: cover;
+    padding: 5px;
+}
+
+.card__title {
+    color: white;
+    height: 50px;
+    padding: 10px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; 
+    -webkit-box-orient: vertical;
+}
+
+.card__version {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__version span {
+    width: 50px;
+    height: 25px;
+    background-color: #3300FF;
+    border-radius: 3px;
+    padding:  0 2px;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    margin-left: 4px;
+    line-height: 25px;
+    cursor: pointer;
+}
+
+.card__price, .card__version {
+    color: white;
+    padding: 10px;
+}
+
+.card__action {
+    position: absolute;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    padding: 10px;
+    transition: 0.5s;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    animation: action 0.5s linear forwards;
+    display: none;
+}
+
+@keyframes action {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 5px;
+    }
+}
+
+
+
+.card__action span {
+    display: block;
+    width: 100px;
+    height: 50px;
+    color: white;
+    background-color: #3300FF;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card__action--center {
+    line-height: 40px;
+}

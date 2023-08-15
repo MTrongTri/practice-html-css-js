@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+:root {
+    --success-color: green;
+    --warning-color: orange;
+    --erro-color: red;
+
+    --success-light: rgba(0, 128, 0, 0.4);
+    --warning-light: rgba(255, 165, 0, 0.4);
+    --erro-light: rgba(255, 0, 0, 0.4);
+
+    --width-toast: 300px; 
+}
+
+body {
+    height: 100vh;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.control {
+    margin: auto;
+    display: flex;
+}
+
+.success, .warning, .erro {
+    margin: auto;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    width: 150px;
+    height: 40px;
+    color: #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.success:hover, 
+.warning:hover, 
+.erro:hover {
+    opacity: 0.7;
+}
+
+.success {
+    background-color: var(--success-color);
+}
+
+.warning {
+    background-color: var(--warning-color);
+}
+
+.erro {
+    background-color: var(--erro-color);
+}
+
+.toasts {
+    position: fixed;
+    top: 30px;
+    right: 10px;
+}
+
+.toast {
+    position: relative;
+    width: var(--width-toast);
+    height: 90px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 6px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: slide_show 2s linear forwards;
+}
+
+.toast i {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.toast span {
+    flex: 1;
+}
+
+.toast-success {
+    background-color: var(--success-light);
+    border-left: 5px solid var(--success-color);
+}
+
+.toast-success .countdown {
+    width: calc(var(--width-toast) - 5px);
+    height: 4px;
+    background-color: var(--success-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: countdown 2s linear forwards;
+}
+
+.toast-warning {
+    background-color: var(--warning-light);
+    border-left: 5px solid var(--warning-color);
+}
+
+.toast-warning .countdown {
+    width: calc(var(--width-toast) - 5px);
+    height: 4px;
+    background-color: var(--warning-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: countdown 2s linear forwards;
+}
+
+.toast-erro {
+    background-color: var(--erro-light);
+    border-left: 5px solid var(--erro-color);
+}
+
+.toast-erro .countdown {
+    width: calc(var(--width-toast) - 5px);
+    height: 4px;
+    background-color: var(--erro-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: countdown 2s linear forwards;
+}
+
+@keyframes countdown {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes slide_show {
+    0% {
+        transform: translateX(100%);
+    }
+
+    25% {
+        transform: translateX(-10%);
+    }
+
+    50% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes slide_hide {
+    0% {
+        transform: translateX(-10%);
+    }
+
+    25% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-10%);
+    }
+
+    100% {
+        transform: translateX(110%);
+    }
+}
